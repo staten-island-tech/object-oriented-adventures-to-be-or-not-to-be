@@ -1,0 +1,1 @@
+"This is the trash can, you can drop off all kinds of trash but it doesnt give you any xp. It is recommended that only non recyclable trash and non compostable trash be dropped off here."

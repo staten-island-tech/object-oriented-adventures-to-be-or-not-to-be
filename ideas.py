@@ -1,15 +1,21 @@
 print("this is to be or to not be game")
 n = input("Do you wanna start the game Y/N: ").upper()
 
-if n == "Y":
-    print('ok')
-    name = input("please enter what you would like to be called: ")
-    print("hello,",name,"the goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning experiance.")
-    location = input("you have 7 avalible locations to go to. Type one of the following: Trash can, Jack's shop, Fiona's flower shop, Winstell's recycling center, park, beach, and finally house: " ).lower()
-    if location == 'trash can':
-        print("this is the trash can, you can drop off all kinds of trash but it doesnt give you any xp. It is recommended that only non recyclable trash and non compostable trash be dropped off here.")
-        location = input("you have 6 avalible locations to go to. Type one of the following: Jack's shop, Fiona's flower shop, Winstell's recycling center, park, beach, and finally house: " ).lower()
-    if location == "jack's shop":
-        print("one")
+while n == "Y":
+    print('Ok')
+    name = input("Please enter what you would like to be called: ")
+    print("hello,",name,"The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning experience.")
+    location = input("You have 6 avaliable locations to go to. Type the number of one of the following: 1.Jack's shop, 2.Fiona's flower shop, 3.Winstell's recycling center, 4.Park, 5.Beach, 6.House: " )
+    if location == '1':
+        print("This is Jack's Shop.")
+        print("Note: You can come here for quests and to collect the items from the level up")
+        o = input("Would you like to talk to Jack: Y/N").upper()
+        if o == "Y":
+            h = ("Hey, I am Jack, the shopkeeper! Have you come for a quest? (Y/N) ").upper()
+        else:
+            location = input("You have 6 avaliable locations to go to. Type the number of one of the following: 1.Jack's shop, 2.Fiona's flower shop, 3.Winstell's recycling center, 4.Park, 5.Beach, 6.House: " )
+    if location == "2":
+        print("This is Fiona's flower shop")
+        print("Note:")
 else:
     print("oh well then.")
