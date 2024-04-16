@@ -49,8 +49,8 @@ Level 3 = trash picker upper
 Item after leveled up chances
 Use a random 1-30 pick number and every item received, there will be an easier chance of getting trash so it continues to shrink. Ex no item = 1-30, gloves = 1-25, metal detector, 1-20, and trash picker upper is 1-10.
 Npcs
-NPCs will interact with the player by providing information, giving rewards, giving quests (?)
-Npc 1: [Jack] is a shopkeeper whose shop is alway littered, he can give quests and if you complete them, a reward will be given such as xp.
+NPCs will interact with t yhe player by providing information, giving rewards, giving quests (?)
+Npc 1: [Jack] is a shopkeeper whose shop is alway littered, he can give quests and ifou complete them, a reward will be given such as xp.
 Npc 2: [Fiona] is only unlocked after level 1 and she owns a flower shop where you can drop off compostable things and will reward the player with xp if non compostable, xp will be dropped- she will ask trivia questions about different items and where they should belong.
 Player may ask Fiona for more information on composting
 Npc 3:[Winstell] owns a recycling center and the player can drop off recyclable trash or else, xp will drop – He will ask trivia questions about information given 
