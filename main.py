@@ -4,5 +4,3 @@ class Calculator():
 
     def subtract(x,y):
         return int(x)-int(y)
-
-print(Calculator.add(2,3))
