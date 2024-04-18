@@ -1,8 +1,12 @@
 class quests():
     jacks_quests = [{'Description': "Collect 3 items",
-                     'Reward' = "5 XP"}
-                     {'Description': "Collect 5 items",
-                      "Reward = 10 XP"}]
+                     'Reward': "5 XP"}
+                    {'Description': "Collect 5 items",
+                      'Reward': "10 XP"}
+                    {'Description': "Collect 10 items ",
+                     'Reward': "20 XP"}
+                        ] 
+    #change to functions that correspond to the requirement and reward given
 
     def jack_quest1(): #First quest for jack
         description = ("[Quest: Collect 3 items — Reward = 5 XP]")
@@ -13,6 +17,8 @@ class npc_Jack():
         player_answer = input("Hey, I’m Jack the shopkeeper! Have you come for a quest? (Y/N)").upper()
         if player_answer == "Y":
             print()
+    def quests():
+        
 
 """         If player has (insert recyclable items):  
 recycle_playeritems == true
