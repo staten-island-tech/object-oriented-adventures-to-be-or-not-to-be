@@ -48,10 +48,15 @@ with open("data.json", "r") as f:
         else:
             print("oh well then.")
     class Level:
-        for i in player:
-            x = (0)
-            print("Level:"x)
-            
+        for i in data:
+            if i["Xp"] == 8:
+                i["Level"] = (i["Level"]+1)
+                data.append(i["Level"].__dict__)
+                print("you leveled up: your new level is:",i["Level"])
+    
+
+
+
             
 
     class Items:
