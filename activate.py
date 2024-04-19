@@ -1,26 +1,24 @@
-import json
-import os 
-with open("data.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
-    data = json.load(f)
-    ##Call classes in here
-
-class Level:
-    for i in data:
-       print(i["Level"])
+Player = [{'Name': "Judy", 'XP': 17, 'LVL': [10]}]
 
 
-#No code needed below this line
- # Creates a new JSON file with the updated data
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(data)
+    
+for i in Player:
+    print(i['XP'])
+    dif = int(i['XP'])/8
 
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
 
- # Overwrite the old JSON file with the new one
-os.remove("data.json")
-os.rename(new_file, "data.json")
+    Player.append(dif)
 
+
+    if dif == ["1","2","3","4","5","6","7","8"]:
+        print(f"You are now lvl {dif}!")
+        i['LVL'].append(dif)
+           
+
+    else:
+        print(f"You are lvl",i["LVL"])
+       
+    for i in Player:
+        i['LVL'].clear()
+        i['LVL'].append(1)
+        print(Player)
