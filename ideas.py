@@ -1,23 +1,33 @@
 # lvl 
-Player = [{'Name': "Judy", 'XP': 17, 'LVL': [1]}]
+Player = [{'Name': [], 'XP': 0, 'LVL': [0]}]
+
+for i in Player:
+    i['Name'].clear()
+
+    n = input("What is your name? ")
+    i['Name'].append(n)
+    x = int(input("Input starting XP: "))
+    i['XP'] = x
+
+
+    x = 18
+    i['XP'] = x
 
 def calc_lvl():
-    quotient = []
     for i in Player:
-        print(i['XP'])
-        dif = int(i['XP'])/8
+        xp = i['XP']
+        dif = int(xp)/8
 
-        quotient.append(int(dif))
+        i['LVL'] = dif
+
 
         if dif.is_integer():
             print(f"You are now lvl {dif}!")
-            i['LVL'].append(dif)
             
 
         else:
             print(f"You are now lvl {dif}!") 
-        
-for i in Player:
-    i['LVL'].clear()
-    i['LVL'].append(3)
-    print(Player)
+
+            
+calc_lvl()
+print(Player)
