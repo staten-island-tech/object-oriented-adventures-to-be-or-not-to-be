@@ -18,9 +18,9 @@ class npc_Jack():
         if player_answer == "Y":
             print()
     def quests():
-        
 
-"""         If player has (insert recyclable items):  
+
+"""If player has (insert recyclable items):  
 recycle_playeritems == true
 Count the number of items (n), convert into xp (n),
 add to player xp count–  for i in player:
@@ -41,8 +41,6 @@ class npc_Fiona():
 class npc_Winstell():
     def dialogue_1():
         print("Winstell: “Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory, (B) to know more on items you can recycle, or (N) to cancel?")
-
-
 
 
 
