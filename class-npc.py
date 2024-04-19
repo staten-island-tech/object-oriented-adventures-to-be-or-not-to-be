@@ -12,12 +12,10 @@ class quests():
         description = ("[Quest: Collect 3 items — Reward = 5 XP]")
         return description
 
-class npc_Jack():
-    def dialogue_1():
-        player_answer = input("Hey, I’m Jack the shopkeeper! Have you come for a quest? (Y/N)").upper()
-        if player_answer == "Y":
-            print()
-    def quests():
+def npc_Jack():
+    player_answer = input("Hey, I’m Jack the shopkeeper! Have you come for a quest? (Y/N)").upper()
+    if player_answer == "Y":
+        print()
 
 
 """If player has (insert recyclable items):  
@@ -38,9 +36,8 @@ class npc_Fiona():
     def dialogue_1():
 
 
-class npc_Winstell():
-    def dialogue_1():
-        print("Winstell: “Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory, (B) to know more on items you can recycle, or (N) to cancel?")
+def npc_Winstell():
+    print("Winstell: “Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory, (B) to know more on items you can recycle, or (N) to cancel?")
 
 
 

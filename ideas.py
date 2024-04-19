@@ -10,9 +10,6 @@ for i in Player:
     i['XP'] = x
 
 
-    x = 18
-    i['XP'] = x
-
 def calc_lvl():
     for i in Player:
         xp = i['XP']
