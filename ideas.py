@@ -32,9 +32,10 @@ class Name:
         else:
             print("oh well then.")
 class Level:
-    Player = [{'Name': "Judy", 'XP': 17, 'LVL': [10]}]
+    
 
     def calc_lvl():
+        Player = [{'Name': "Judy", 'XP': 17, 'LVL': [10]}]
         quotient = []
         for i in Player:
             print(i['XP'])
@@ -53,10 +54,10 @@ class Level:
             else:
                 print(f"You are now lvl {dif}!")
        
-    for i in Player:
-        i['LVL'].clear()
-        i['LVL'].append(1)
-        print(Player)
+        for i in Player:
+            i['LVL'].clear()
+            i['LVL'].append(1)
+            print(Player)
 
 
 
