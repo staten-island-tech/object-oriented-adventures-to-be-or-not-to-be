@@ -87,7 +87,9 @@ with open("data.json", "r") as f:
         data.append(items.__dict__)
         for i in data:
             print(i)
-
+print("You found a Plastic Bottle")
+pick_up = input("Please type what you would like to call the Plastic Bottle: ")
+add_item(Plastic_Bottles,Plastic_Bag,Empty_Food_Wrapper,Empty_Soda_Can,Banana_Peel,Styrofoam_Packet)
 
 
 
