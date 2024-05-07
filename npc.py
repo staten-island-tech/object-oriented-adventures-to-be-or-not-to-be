@@ -1,42 +1,55 @@
 class NPC():
-    def __init__(info, name, location, description):
+    def __init__(info, name, location, description, dialogue):
         info.name = name
         info.location = location
         info.description = description
+        info.dialogue
 
-    def __str__(info):
-        return f"{info.name}, {info.location}, {info.description}"
+class Jack():
+        name = "Jack"
+        location = "Shopkeeper"
+        description = "Jack is a shopkeeper whose shop is alway littered, he can give quests and if you complete them, a reward will be given such as xp."
+        dialogue = input("Hey, I’m Jack the shopkeeper! Have you come for a quest? (Y/N)")
+        super(NPC).__init__(name, location, description, dialogue)
 
-class Jack(NPC):
-    name = "Jack"
-    location = "Shopkeeper"
-    description = "Jack is a shopkeeper whose shop is alway littered, he can give quests and if you complete them, a reward will be given such as xp."
-    super(NPC).__init__(name, location, description)
-    
-    def __str__(info):
-        return f"{info.name}, {info.location}, {info.description}"
+        def action(dialogue):
+            if dialogue.upper() == "Y":
+                # print(quests.quest_Jack())
+            
+            else:
+                print()
 
 
+class Fiona():
+        name = "Fiona"
+        location = "Flower Shop Keeper"
+        description = "Fiona is only unlocked after level 1 and she owns a flower shop where you can drop off compostable things and will reward the player with xp if non compostable, xp will be dropped- she will ask trivia questions about different items and where they should belong."
+        super(NPC).__init__(name, location, description)
 
+
+    def Winstell():
+        name = "Winstell"
+        location = "Recylcing Center Owner"
+        description = "Winstell owns a recycling center and the player can drop off recyclable trash or else, xp will drop."
+        super(NPC).__init__( name, location, description)
 
 
 class quests():
     
-    def jacks_1():
+    def quest_Jack():
         print("Quest #1 - Description: Collect 3 items, Reward: 5 XP")
         #description
 
-
-
-    def jacks_2():
+    def quest_Fiona():
         print("Quest #2 - Description: Collect 5 items, Reward: 10 XP")
         #description
     
-    def jacks_3():
-        print("Description: Collect 10 items, Reward: 20 XP")
+    def quests_Winstell():
+        print("Description: Collect 10 items, Reward: 20 XP") 
         #description
 
     #change to functions that correspond to the requirement and reward given
+
 """ 
 def choose_quest():
     import random
@@ -57,33 +70,4 @@ def npc_Jack():
 
 
     elif player_answer == "N":
-        print("Jack: Oh well, come again later.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def npc_Fiona():
-
-    def dialogue_1():
-
-def npc_Winstell():
-    print("Winstell: “Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory, (B) to know more on items you can recycle, or (N) to cancel?")
-
-
-
- """
+        print("Jack: Oh well, come again later.")"""
