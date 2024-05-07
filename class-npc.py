@@ -18,20 +18,6 @@ def npc_Jack():
         print()
 
 
-"""If player has (insert recyclable items):  
-recycle_playeritems == true
-Count the number of items (n), convert into xp (n),
-add to player xp count–  for i in player:
-			e = (int(i[‘xp’  
-	xp= int(e + x)])
-	i[‘xp’] =  new_xp
-If compost_playeritems==true:
-	print(f“Winstell: Great! You have recycled {n} items and gained {n} exp. Now you have {new_score}in total”
-Elif compost_playeritems==false:
-	print(f“Winstell: Whoops, you don’t have anything to compost. Collect some and return back here) """
-
-
-
 class npc_Fiona():
     def dialogue_1():
 

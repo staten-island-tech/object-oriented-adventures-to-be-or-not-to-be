@@ -1,5 +1,20 @@
-class NPC(quests):
-    print(quests.jacks_1())
+class NPC():
+    def __init__(info, name, location, description):
+        info.name = name
+        info.location = location
+        info.description = description
+
+    def __str__(info):
+        return f"{info.name}, {info.location}, {info.description}"
+
+class Jack(NPC):
+    name = "Jack"
+    location = "Shopkeeper"
+    description = "Jack is a shopkeeper whose shop is alway littered, he can give quests and if you complete them, a reward will be given such as xp."
+    super(NPC).__init__(name, location, description)
+    
+    def __str__(info):
+        return f"{info.name}, {info.location}, {info.description}"
 
 
 
@@ -10,10 +25,8 @@ class quests():
     def jacks_1():
         print("Quest #1 - Description: Collect 3 items, Reward: 5 XP")
         #description
-        for i in (playerinventory.json):
-            if len(playerinventory.json) == 3:
 
-""" 
+
 
     def jacks_2():
         print("Quest #2 - Description: Collect 5 items, Reward: 10 XP")
@@ -24,7 +37,7 @@ class quests():
         #description
 
     #change to functions that correspond to the requirement and reward given
-"""  """
+""" 
 def choose_quest():
     import random
     select_number = random.randint(1,3)

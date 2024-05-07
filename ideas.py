@@ -1,5 +1,5 @@
 # lvl 
-Player = [{'Name': [], 'XP': 0, 'LVL': [0]}]
+Player = [{'Name': [], 'XP': 0, 'LVL': 0}]
 
 for i in Player:
     i['Name'].clear()
