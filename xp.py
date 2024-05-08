@@ -14,24 +14,14 @@ class rewards():
 
 
 def calc_lvl():
-    quotient = []
     for i in Player:
         print(i['XP'])
         dif = int(i['XP'])/8
 
 
-
-
-        quotient.append(int(dif))
-
-
-
-
         if dif.is_integer():
             print(f"You are now lvl {dif}!")
             i['LVL'] = dif
-
-
 
 
         else:

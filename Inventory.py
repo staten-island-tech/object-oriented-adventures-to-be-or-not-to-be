@@ -21,7 +21,7 @@ with open("data.json", "r") as f:
         for i in data:
             print(i)
 print("You found a ")
-pick_up = input("Please type what you would like to call the Plastic Bottle: ")
+pick_up = input("Please type this : ")
 data.append(pick_up)
 print(data)
 
