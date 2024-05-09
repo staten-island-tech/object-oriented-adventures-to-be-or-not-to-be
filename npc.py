@@ -54,6 +54,6 @@ class Winstell():
         # dialogue = input("Winstell: Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory or (B) Recieve a quest. (Type 'N' to return) >> ")
         super(NPC).__init__(name, location, description)
 
-Jack = NPC('Jack', 'Shopkeeper', "Jack is a shopkeeper whose shop is alway littered, he can give quests and if you complete them, a reward will be given such as xp.")
-print(Jack)
+Jack = NPC('Jack', 'Shop', "Jack is a shopkeeper whose shop is alway littered, he can give quests and if you complete them, a reward will be given such as xp.")
+input(Jack)
 print(jack.action())
