@@ -14,6 +14,9 @@ def calc_lvl():
         print(i['XP'])
         dif = int(i['XP'])/8
 
+        new_name = "Jessie"
+        i['Name'] = new_name
+
         if dif.is_integer():
             print(f"You are now lvl {dif}!")
             i['LVL'] = dif

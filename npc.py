@@ -7,6 +7,7 @@ class NPC():
     def __str__(self):
         return f"{self.description}"
     # class template for NPC
+
 class quests():
     def quest_Jack():
         print("Quest #1 - Description: Collect 3 items, Reward: 5 XP")
@@ -34,15 +35,18 @@ class Jack():
             input("Returning to to main location... ")
 
 class Fiona():
-    info_fiona = NPC('Fiona', 'Flower Shop', "Fiona is only unlocked after level 1 and she owns a flower shop where you can drop off compostable things and will reward the player with xp if non compostable, xp will be dropped- she will ask trivia questions about different items and where they should belong.")
-        # dialogue = input("Fiona: Welcome to my flower shop! Would you like to (a): Compost your items or (b): Accept a quest. (Type ‘N’ to return) >> ")
-
+    info_fiona = NPC('Fiona', 'Flower Shop', "Fiona is only unlocked after level 1 and she owns a flower shop where you can drop off compostable things and will reward the player with xp if non compostable, xp will be dropped.")
+    
+    def dialogue():
+        dialogue = input("Fiona: Welcome to my flower shop! Would you like to (a): Compost your items or (b): Accept a quest. (Type ‘N’ to return) >> ")
+        # include if, elif, else statements here
 
 class Winstell():
     info_Winstell = NPC('Winstell', 'Recylcing Center Owner', 'Winstell owns a recycling center and the player can drop off recyclable trash and xp will drop.')
-    # dialogue = input("Winstell: Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory or (B) Recieve a quest. (Type 'N' to return) >> ")
+    
+    def dialogue():
+        dialogue = input("Winstell: Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory or (B) Recieve a quest. (Type 'N' to return) >> ")
+        # include if, elif, else statements here
 
-
-input(Jack.info_Jack)
-input(Fiona.info_fiona)
 input(Winstell.info_Winstell)
+print(Winstell.dialogue)
