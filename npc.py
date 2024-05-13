@@ -45,8 +45,12 @@ class Winstell():
     info_Winstell = NPC('Winstell', 'Recylcing Center Owner', 'Winstell owns a recycling center and the player can drop off recyclable trash and xp will drop.')
     
     def dialogue():
-        dialogue = input("Winstell: Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory or (B) Recieve a quest. (Type 'N' to return) >> ")
+        x = input("Winstell: Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory or (B) Recieve a quest. (Type 'N' to return) >> ")
+        if x.upper() == 'Y':
+            select = input("Great!")
         # include if, elif, else statements here
 
-input(Winstell.info_Winstell)
-print(Winstell.dialogue)
+
+    def recycle():
+        for i in inventory: #check if inventory has compatible items
+             if inventory ==
