@@ -1,28 +1,28 @@
-Player = [{'Name': "Judy", 'XP': 14, 'LVL': 0}]
 
+x = int(64)
 
-class rewards():
-    def reward_1():
-        for i in Player:
-            nxp = i['XP'] + 2
-            i['XP'] = nxp
-        print(Player)
-
-
-def calc_lvl():
-    for i in Player:
-        print(i['XP'])
-        dif = int(i['XP'])/8
-
-
-        if dif.is_integer():
-            print(f"You are now lvl {dif}!")
-            i['LVL'] = dif
-
-
-        else:
-            print(f"You are now lvl {dif}!")
-
-
-rewards.reward_1()
-calc_lvl()
+if (x%8) == 0:
+  print(x/8)
+elif (x-1)%8 == 0:
+  y = (x-1)/8
+  print(y)
+elif (x-2)%8 == 0:
+  y = (x-2)/8
+  print(y)
+elif (x-3)%8 == 0:
+  y = (x-3)/8
+  print(y)
+elif (x-4)%8 == 0:
+  y = (x-4)/8
+  print(y)
+elif (x-5)%8 == 0:
+  y = (x-5)/8
+  print(y)
+elif (x-6)%8 == 0:
+  y = (x-6)/8
+  print(y)
+elif (x-7)%8 == 0:
+  y = (x-7)/8
+  print(y)
+else:
+  print("nope")

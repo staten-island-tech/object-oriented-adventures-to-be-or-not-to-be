@@ -1,38 +1,51 @@
-Player = [{'Name': "Judy", 'XP': 18, 'LVL': 0}]
-
+Player = [{'Name': "Judy", 'total_XP': 0, 'LVL': 0}]
 
 
 
 class rewards():
     def reward_1():
         for i in Player:
-            nxp = i['XP'] + 2
-            i['XP'] = nxp
-        print(Player)
+            i['total_XP'] = i['total_XP'] + 2
+            print(i['total_XP'])
 
 
 
 
-def calc_lvl():
-    for i in Player:
-        print(i['XP'])
-        dif = int(i['XP'])/8
+class Level:
 
+    def calc_lvl():
+        for i in Player:
+            if (i['total_XP']%8) == 0:
+                y = i['total_XP']/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-1)%8 == 0:
+                y = (i['total_XP']-1)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-2)%8 == 0:
+                y = (i['total_XP']-2)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-3)%8 == 0:
+                y = (i['total_XP']-3)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-4)%8 == 0:
+                y = (i['total_XP']-4)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-5)%8 == 0:
+                y = (i['total_XP']-5)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-6)%8 == 0:
+                y = (i['total_XP']-6)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['total_XP']-7)%8 == 0:
+                y = (i['total_XP']-7)/8
+                print(y)
+                i['LVL'] = y
 
-        if dif.is_integer():
-            print(f"You are now lvl {dif}!")
-            i['LVL'] = dif
-
-
-        else:
-            print(f"You are now lvl {dif}!")
-    
-    rewards.reward_1()
-    calc_lvl()
-    print(rewards.calc_lvl())
-
-        
-
-
-
-
+rewards.reward_1()
