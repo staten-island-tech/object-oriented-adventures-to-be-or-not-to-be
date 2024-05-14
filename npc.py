@@ -49,8 +49,3 @@ class Winstell():
         if x.upper() == 'Y':
             select = input("Great!")
         # include if, elif, else statements here
-
-
-    def recycle():
-        for i in inventory: #check if inventory has compatible items
-             if inventory ==
