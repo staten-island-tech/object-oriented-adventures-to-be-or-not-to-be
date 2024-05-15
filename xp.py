@@ -1,7 +1,15 @@
-Player = [{'Name': "Judy", 'total_XP': 0, 'LVL': 0}]
+import json
+## Open the JSON file of movie data
+data = open("./data.json", encoding="utf8")
+## create variable "data" that represents the enitre movie list
+data = json.load(data)
+
+for i in data:
+    if i['ID'] == 2:
+        print(i['name'])
 
 
-
+"""
 class rewards():
     def reward_1():
         for i in Player:
@@ -49,3 +57,4 @@ class Level:
                 i['LVL'] = y
 
 rewards.reward_1()
+"""

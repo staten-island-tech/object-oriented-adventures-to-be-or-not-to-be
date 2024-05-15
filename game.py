@@ -1,32 +1,45 @@
 import json
 import os
+from xp import Level
 class Level:
-    
 
     def calc_lvl():
-        
         for i in Player:
-            print(i['XP'])
-            dif = int(i['XP'])/8
+            if (i['Total_XP']%8) == 0:
+                y = i['Total_XP']/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-1)%8 == 0:
+                y = (i['Total_XP']-1)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-2)%8 == 0:
+                y = (i['Total_XP']-2)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-3)%8 == 0:
+                y = (i['Total_XP']-3)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-4)%8 == 0:
+                y = (i['Total_XP']-4)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-5)%8 == 0:
+                y = (i['Total_XP']-5)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-6)%8 == 0:
+                y = (i['Total_XP']-6)/8
+                print(y)
+                i['LVL'] = y
+            elif (i['Total_XP']-7)%8 == 0:
+                y = (i['Total_XP']-7)/8
+                print(y)
+                i['LVL'] = y
 
 
-         
-
-            if dif.is_integer():
-                print(f"You are now lvl {dif}!")
-                i['LVL'].append(dif)
-           
-
-
-            else:
-                print(f"You are now lvl {dif}!")
-       
-        for i in Player:
-            i['LVL']=dif
-            print(Player)
-
-
-class Name(Level):
+class Name():
     def append_Name():
         def __init__(self,name):
             self.name = name
@@ -37,7 +50,7 @@ with open("player.json", "r") as f:
 # Serialize the updated Python list to a JSON string
     player = json.load(f)
 ##Call classes in here
-Player = [{'Name': 'Name', 'XP': 19, 'LVL': [0]}]
+Player = [{'Name': 'Name', 'Total_XP': 19, 'LVL': [0]}]
 print("this is to be or to not be game")
 n = input("Do you wanna start the game Y/N: ").upper()      
 
@@ -47,7 +60,7 @@ while n == "Y":
     Name = input("Please enter what you would like to be called: ")
     for i in Player:
         i['Name'] = Name
-    print("Hello,",Name,"The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning experience.")
+    print("Hello,",Name,"The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning eTotal_XPerience.")
     location = input("You have 6 available locations to go to. Type the number of one of the following: 1.Jack's shop, 2.Fiona's flower shop, 3.Winstell's recycling center, 4.Park, 5.Beach, 6.House, 7.Trash can, 8.Check stats: " )
     if location == '1':
         input("This is Jack's Shop.")
@@ -75,30 +88,7 @@ while n == "Y":
     else:
         print("oh well then.")
 
-class Level:
-    
 
-    def calc_lvl():
-        
-        for i in Player:
-            print(i['XP'])
-            dif = int(i['XP'])/8
-
-
-         
-
-            if dif.is_integer():
-                print(f"You are now lvl {dif}!")
-                i['LVL'].append(dif)
-           
-
-
-            else:
-                print(f"You are now lvl {dif}!")
-       
-        for i in Player:
-            i['LVL']=dif
-            print(Player)
 
 
 
