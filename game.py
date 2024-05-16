@@ -1,8 +1,26 @@
+from activate import Level
+from activate import Name
+from activate import Player
 import json
 import os
-from xp import Level
-class Level:
+import random
 
+## Open the JSON file of movie data
+data = open("./data.json", encoding="utf8")
+## create variable "data" that represents the enitre data list
+data = json.load(data)
+
+#**Player information
+Player = [{'Name': 'Name', 'Total_XP': 0, 'LVL': 0}]
+
+""" class Name():
+    def append_Name():
+        def __init__(self,name):
+            self.name = name
+        def __str__(self):
+            return f"{self.name}
+
+class Level:
     def calc_lvl():
         for i in Player:
             if (i['Total_XP']%8) == 0:
@@ -36,24 +54,10 @@ class Level:
             elif (i['Total_XP']-7)%8 == 0:
                 y = (i['Total_XP']-7)/8
                 print(y)
-                i['LVL'] = y
+                i['LVL'] = y """
 
-
-class Name():
-    def append_Name():
-        def __init__(self,name):
-            self.name = name
-        def __str__(self):
-            return f"{self.name}"
-
-with open("player.json", "r") as f:
-# Serialize the updated Python list to a JSON string
-    player = json.load(f)
-##Call classes in here
-Player = [{'Name': 'Name', 'Total_XP': 19, 'LVL': [0]}]
-print("this is to be or to not be game")
 n = input("Do you wanna start the game Y/N: ").upper()      
-
+print("This is To Be or Not To be game ")
 
 while n == "Y":
     print('Ok')
@@ -90,8 +94,31 @@ while n == "Y":
 
 
 
+# player find item
+def find_item():  
+    item_gen = random.randint(1,6)
+    for i in data:
+        if item_gen == i['ID']:
+            # append into player inventory
+            item = i['name']
+            item_type = i['type']
+            print(f"Item: {item}, Type: {item_type} ")
 
+number_guess = random.randint(1,10)
+player_guess = int(input("Guess a number between 1 to 10: "))
 
+while player_guess != number_guess:
+    print("Wrong guess")
+    if player_guess < number_guess:
+        print("Your guess is too low") 
+    elif player_guess > number_guess:
+      print("Your guess is too high")
+    player_guess = int(input("Please guess again: "))
+
+if player_guess == number_guess:
+    input("Yay! You got...")
+    find_item()
+    
 
 
 
@@ -101,7 +128,7 @@ while n == "Y":
 new_file = "updated.json"
 with open(new_file, "w") as f:
     # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(player)
+    json_string = json.dumps(data)
 
     # Write the JSON string to the new JSON file
     f.write(json_string)
