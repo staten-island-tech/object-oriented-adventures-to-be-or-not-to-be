@@ -49,3 +49,8 @@ class Winstell():
         if x.upper() == 'Y':
             select = input("Great!")
         # include if, elif, else statements here
+
+#Player Inventory
+inv_recycle = []
+inv_trash = []
+inv_compost = []
