@@ -1,24 +1,10 @@
-from activate import Level
-from activate import Name
-from activate import Player
+
 import json
 import os
 import random
 
-## Open the JSON file of movie data
-data = open("./data.json", encoding="utf8")
-## create variable "data" that represents the enitre data list
-data = json.load(data)
 
 #**Player information
-Player = [{'Name': 'Name', 'Total_XP': 0, 'LVL': 0}]
-
-""" class Name():
-    def append_Name():
-        def __init__(self,name):
-            self.name = name
-        def __str__(self):
-            return f"{self.name}
 
 class Level:
     def calc_lvl():
@@ -54,8 +40,19 @@ class Level:
             elif (i['Total_XP']-7)%8 == 0:
                 y = (i['Total_XP']-7)/8
                 print(y)
-                i['LVL'] = y """
+                i['LVL'] = y 
+class Name():
+    def append_Name():
+        def __init__(self,name):
+            self.name = name
+        def __str__(self):
+            return f"{self.name}"
+## Open the JSON file of movie data
+data = open("./data.json", encoding="utf8")
+## create variable "data" that represents the enitre data list
+data = json.load(data)
 
+Player = [{'Name': 'Name', 'Total_XP': 9, 'LVL': [0]}]
 n = input("Do you wanna start the game Y/N: ").upper()      
 print("This is To Be or Not To be game ")
 
