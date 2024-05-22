@@ -10,9 +10,6 @@ with open("data.json", "r") as f:
 Player = [{'Name': 'Name', 'Total_XP': 0, 'LVL': 0, 'INV':[]}]
 
 for i in data:
-    x = i[1]
-
-for i in Player:
-    i['Name'] = "Judy"
-    Player.append(x)
-    print(Player)
+    if i["type"] == "Recyclable":
+        Player.append(i['name'])
+        print(Player)
