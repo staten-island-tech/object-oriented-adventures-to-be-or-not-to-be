@@ -1,7 +1,11 @@
-
 import json
 import os
 import random
+
+## Open the JSON file of movie data
+data = open("./data.json", encoding="utf8")
+## create variable "data" that represents the enitre data list
+data = json.load(data)
 
 
 #**Player information
@@ -47,22 +51,23 @@ class Name():
             self.name = name
         def __str__(self):
             return f"{self.name}"
+        
 ## Open the JSON file of movie data
 data = open("./data.json", encoding="utf8")
 ## create variable "data" that represents the enitre data list
 data = json.load(data)
 
 Player = [{'Name': 'Name', 'Total_XP': 9, 'LVL': [0]}]
-n = input("Do you wanna start the game Y/N: ").upper()      
-print("This is To Be or Not To be game ")
+n = input("Do you wanna start the game (Y/N): ").upper()      
+input("This is To Be or Not To be game ")
 
 while n == "Y":
     print('Ok')
     Name = input("Please enter what you would like to be called: ")
     for i in Player:
         i['Name'] = Name
-    print("Hello,",Name,"The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning eTotal_XPerience.")
-    location = input("You have 6 available locations to go to. Type the number of one of the following: 1.Jack's shop, 2.Fiona's flower shop, 3.Winstell's recycling center, 4.Park, 5.Beach, 6.House, 7.Trash can, 8.Check stats: " )
+        print(f"Hello, {i['name']} The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning!")
+    location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
     if location == '1':
         input("This is Jack's Shop.")
         print("Note: You can come here for quests and to collect the items from leveling up.")
@@ -116,7 +121,7 @@ if player_guess == number_guess:
     input("Yay! You got...")
     find_item()
     
-
+n = input("Would you like to change locations? (Y/N) ")
 
 
 

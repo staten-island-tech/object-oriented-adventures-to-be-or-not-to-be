@@ -1,10 +1,24 @@
+****** NOT UPDATED!!!*****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 answer = input("Do you want to visit Jack? Y/N ")
 if answer.upper() == "Y":
-     True
+    return True
 else:
     confirm == False
-
-
 
 
 class NPC():

@@ -1,4 +1,5 @@
-class player():
+
+""" class player():
 
     def __init__(self, name, score, level):
         self.name = name
@@ -7,7 +8,7 @@ class player():
          
     # __str__ function that runs when referring to the album
     def __str__(self):
-        return f"{self.name}, {self.score}, {self.powerup}"
+        return f"{self.fame}, {self.score}, {self.powerup}"
     
     def add_score():
 
@@ -44,3 +45,4 @@ Empty food wrapper
 Empty soda can
 Banana peel
 Styrofoam packet
+ """
