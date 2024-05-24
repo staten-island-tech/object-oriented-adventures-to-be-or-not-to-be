@@ -1,3 +1,5 @@
+import Player
+
 class rewards():
     def reward_q1():
         for i in Player:

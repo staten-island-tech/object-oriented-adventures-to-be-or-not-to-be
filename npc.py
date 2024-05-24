@@ -1,3 +1,10 @@
+import Player
+
+class item_type():
+    recyclables = [("Plastic Bag"), ("Plastic Bottle"), ("Empty Soda Can")]
+    compost = [("Plastic Bag"), ("Plastic Bottle"), ("Empty Soda Can")]
+    trash = [("Banana Peel"), ("Styrofoam packet")]
+
 class NPC():
     def __init__(self, name, location, description):
         self.name = name
@@ -52,5 +59,8 @@ class Winstell():
 
 
     def recycle():
-        for i in inventory: #check if inventory has compatible items
-             if inventory ==
+        for i in Player: #check if inventory has compatible items
+             for it in i['INV']:
+                 if it in: "Plastic Bag",
+                     
+                     
