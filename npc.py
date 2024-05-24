@@ -42,7 +42,7 @@ class Fiona():
         # include if, elif, else statements here
 
 class Winstell():
-    info_Winstell = NPC('Winstell', 'Recylcing Center Owner', 'Winstell owns a recycling center and the player can drop off recyclable trash and xp will drop.')
+    info_Winstell = NPC('Winstell', 'Recycling Center Owner', 'Winstell owns a recycling center and the player can drop off recyclable trash and xp will drop.')
     
     def dialogue():
         x = input("Winstell: Hello, I’m Winstell. If you’ve come to recycle, you arrived at the right place! Enter (A) if you would like to recycle items in your inventory or (B) Recieve a quest. (Type 'N' to return) >> ")
@@ -54,3 +54,4 @@ class Winstell():
 inv_recycle = []
 inv_trash = []
 inv_compost = []
+
