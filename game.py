@@ -45,6 +45,7 @@ class Level:
                 y = (i['Total_XP']-7)/8
                 print(y)
                 i['LVL'] = y 
+                
 class Name():
     def append_Name():
         def __init__(self,name):
