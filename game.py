@@ -12,7 +12,8 @@ class Player:
 
 #**Player information
 
-class Level(Player):
+class Level():
+    Player = [{'Name': 'Name', 'Total_XP': 9, 'LVL': [0]}]
     def calc_lvl():
         for i in Player:
             if (i['Total_XP']%8) == 0:
@@ -61,7 +62,7 @@ class Name():
 data = open("./data.json", encoding="utf8")
 ## create variable "data" that represents the enitre data list
 data = json.load(data)
-class locations(Player,Name):
+class locations():
     Player = [{'Name': 'Name', 'Total_XP': 9, 'LVL': [0]}]
     n = input("Do you wanna start the game (Y/N): ").upper()      
     input("This is To Be or Not To be game ")
@@ -86,56 +87,69 @@ class locations(Player,Name):
         elif location == "4":
             input("This the park.")
             print("Note: This is a place that is usually littered. You can have a higher chance of finding trash here")
-            def find_item():  
-                item_gen = random.randint(1,6)
-                for i in data:
-                    if item_gen == i['ID']:
-                        # append into player inventory
-                        item = i['name']
-                        item_type = i['type']
-                        print(f"Item: {item}, Type: {item_type} ")
+            while location == "N":
+                def find_item():  
+                    item_gen = random.randint(1,6)
+                    for i in data:
+                        if item_gen == i['ID']:
+                            # append into player inventory
+                            item = i['name']
+                            item_type = i['type']
+                            print(f"Item: {item}, Type: {item_type} ")
 
-            number_guess = random.randint(1,10)
-            player_guess = int(input("Guess a number between 1 to 10: "))
+                number_guess = random.randint(1,10)
+                player_guess = int(input("Guess a number between 1 to 10: "))
 
-            while player_guess != number_guess:
-                print("Wrong guess")
-                if player_guess < number_guess:
-                    print("Your guess is too low") 
-                elif player_guess > number_guess:
-                    print("Your guess is too high")
-                player_guess = int(input("Please guess again: "))
+                while player_guess != number_guess:
+                    print("Wrong guess")
+                    if player_guess < number_guess:
+                        print("Your guess is too low") 
+                    elif player_guess > number_guess:
+                        print("Your guess is too high")
+                    player_guess = int(input("Please guess again: "))
 
-                if player_guess == number_guess:
-                    input("Yay! You got...")
-                    find_item()
+                    if player_guess == number_guess:
+                        input("Yay! You got...")
+                        find_item()
+            
+            location = input("Would you like to change locations? (Y/N) ").upper()
+            if location == "Y":
+                location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
         
-            location = input("Would you like to change locations? (Y/N) ")
+            
+
+                    
         elif location == "5":
             print("This is the Beach. you can find a wider range of trash")
-            def find_item():  
-                item_gen = random.randint(1,6)
-                for i in data:
-                    if item_gen == i['ID']:
-                        # append into player inventory
-                        item = i['name']
-                        item_type = i['type']
-                        print(f"Item: {item}, Type: {item_type} ")
+            while location == "N":
+                def find_item():  
+                    item_gen = random.randint(1,6)
+                    for i in data:
+                        if item_gen == i['ID']:
+                            # append into player inventory
+                            item = i['name']
+                            item_type = i['type']
+                            print(f"Item: {item}, Type: {item_type} ")
 
-            number_guess = random.randint(1,10)
-            player_guess = int(input("Guess a number between 1 to 10: "))
+                number_guess = random.randint(1,10)
+                player_guess = int(input("Guess a number between 1 to 10: "))
 
-            while player_guess != number_guess:
-                print("Wrong guess")
-                if player_guess < number_guess:
-                    print("Your guess is too low") 
-                elif player_guess > number_guess:
-                    print("Your guess is too high")
-                player_guess = int(input("Please guess again: "))
+                while player_guess != number_guess:
+                    print("Wrong guess")
+                    if player_guess < number_guess:
+                        print("Your guess is too low") 
+                    elif player_guess > number_guess:
+                        print("Your guess is too high")
+                    player_guess = int(input("Please guess again: "))
 
-                if player_guess == number_guess:
-                    input("Yay! You got...")
-                    find_item()
+                    if player_guess == number_guess:
+                        input("Yay! You got...")
+                        find_item()
+                    location = input("Would you like to change locations? (Y/N) ").upper()
+                    if location == "Y":
+                        location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
+                
+                
         elif location == "6":
             print("This is your house")
             print("Note: This is your house, you can relax here")
@@ -148,32 +162,7 @@ class locations(Player,Name):
             print("oh well then.")
 
 
-class Item(Player):
-    def find_item():  
-        item_gen = random.randint(1,6)
-        for i in data:
-            if item_gen == i['ID']:
-                # append into player inventory
-                item = i['name']
-                item_type = i['type']
-                print(f"Item: {item}, Type: {item_type} ")
 
-    number_guess = random.randint(1,10)
-    player_guess = int(input("Guess a number between 1 to 10: "))
-
-    while player_guess != number_guess:
-        print("Wrong guess")
-        if player_guess < number_guess:
-            print("Your guess is too low") 
-        elif player_guess > number_guess:
-            print("Your guess is too high")
-        player_guess = int(input("Please guess again: "))
-
-    if player_guess == number_guess:
-        input("Yay! You got...")
-        find_item()
-        
-    n = input("Would you like to change locations? (Y/N) ")
     # player find item
 
 
