@@ -13,19 +13,19 @@ class Items():
 
 
 
-with open("data.json", "r") as f:
+with open("inventory.json", "r") as f:
     # Serialize the updated Python list to a JSON string
-    data = json.load(f)
+    inventory = json.load(f)
     ##Call classes in here
 
     def create_item(name, type, ID):
         new_item = Items(name, type, ID)
-        data.append(new_item.__dict__)
-        for i in data:
+        inventory.append(new_item.__dict__)
+        for i in inventory:
             print(i)
 
 
-
+#if variable for adding new item
 user_inp = input("Do you want input a new Item? (Y/N) ").upper()
 
 while user_inp == "Y":
@@ -45,11 +45,11 @@ while user_inp == "Y":
 new_file = "updated.json"
 with open(new_file, "w") as f:
     # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(data)
+    json_string = json.dumps(inventory)
 
     # Write the JSON string to the new JSON file
     f.write(json_string)
 
 # Overwrite the old JSON file with the new one
-os.remove("data.json")
-os.rename(new_file, "data.json")
+os.remove("inventory.json")
+os.rename(new_file, "inventory.json")
