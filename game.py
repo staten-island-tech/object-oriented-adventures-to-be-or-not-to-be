@@ -7,12 +7,13 @@ data = open("./data.json", encoding="utf8")
 ## create variable "data" that represents the enitre data list
 data = json.load(data)
 
+## Open the JSON file of movie inventory
+inventory = open("./inventory.json", encoding="utf8")
+## create variable "inventory" that represents the enitre inventory list
+inventory = json.load(inventory)
 
-class Player:
-    stats = [{'Name': 'Name', 'Total_XP': 0, 'LVL': [0]}]
-    Inventory = []
-    
-
+# MAIN STATS LOCATION FOR PLAYER
+Player = [{'Name': 'Name', 'Total_XP': 0, 'LVL': [0]}]
 #**Player information
 
 class Level():
@@ -52,31 +53,34 @@ class Level():
                 i['LVL'] = y 
 
 class find_item:
+
     def guess():
         number_guess = random.randint(1,10)
         player_guess = int(input("Guess a number between 1 to 10: "))
 
         while player_guess != number_guess:
-            print("Wrong guess")
             if player_guess < number_guess:
-                print("Your guess is too low") 
+                print("Wrong guess: Your guess is too low") 
             elif player_guess > number_guess:
-                print("Your guess is too high")
+                print("Wrong guess: Your guess is too high")
             player_guess = int(input("Please guess again: "))
-            return player_guess, number_guess
-            
-    def correct_guess(player_guess, number_guess):
+        
         if player_guess == number_guess:
-            input("Yay! You got...")
-            item_gen = random.randint(1,8)
-            for i in data:
-                if item_gen == i['ID']:
-                    item = i['name']
-                    item_type = i['type']
-                    print(f"Item: {item}, Type: {item_type} ")
-                    for i in Player:
-                        i['INV'].append({item})
-    
+                item_gen = random.randint(1,8)
+
+                for i in data:
+                    if item_gen == i['ID']:
+                        item = i['name']
+                        item_type = i['type']
+                        input("Yay! You got...")
+                        print(f"Item: {item}, Type: {item_type} ")
+                        
+                        add_item = [{'Name': [], 'ID': 0}]
+                        for i in add_item:
+                            i['Name'] = item
+                            i['ID'] = item_gen
+                            inventory.append(add_item)
+                        
 
 class Name():
     def append_Name():
@@ -85,7 +89,8 @@ class Name():
         def __str__(self):
             return f"{self.name}"
 
-class locations(Player):
+class locations():
+    
     n = input("Do you wanna start the game (Y/N): ").upper()      
     print("This is To Be or Not To be game ")
 
@@ -112,19 +117,33 @@ class locations(Player):
             input("This the park.")
             print("Note: This is a place that is usually littered. Please help clean our littered parks.")
             while location == "N":
-                find_item()
+                #ask player if they want to find item
+                ask = input("Do you want to search for trash? (Y/N) ")
+                while ask.upper() == "Y":
+                    find_item.guess()
+                    ask = input("Do you want to search for trash? (Y/N) ")
+                    print(f"This is your inventory: {inventory}")
+                else:
+                    print("Oh well..")
+
             
             location = input("Would you like to change locations? (Y/N) ").upper()
             if location == "Y":
                 location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
         
-            
-
         
         elif location == "5":
             print("This is the Beach. you can find a wider range of trash")
             while location == "N":
-                find_item()
+                #ask player if they want to find item
+                ask = input("Do you want to search for trash? (Y/N) ")
+                while ask.upper() == "Y":
+                    find_item.guess()
+                    ask = input("Do you want to search for trash? (Y/N) ")
+                    print(f"This is your inventory: {inventory}")
+                else:
+                    print("Oh well..")
+
 
             location = input("Would you like to change locations? (Y/N) ").upper()
             if location == "Y":
@@ -141,22 +160,18 @@ class locations(Player):
             print(f"These are your stats: {Player}")
     else:
         print("oh well then.")
-
-
-
     # player find item
 
 
-#No code needed below this line
- # Creates a new JSON file with the updated data
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(data)
+    # Creates a new JSON file with the updated inventory
+    new_file = "updated.json"
+    with open(new_file, "w") as f:
+        # Serialize the updated Python list to a JSON string
+        json_string = json.dumps(inventory)
 
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
+        # Write the JSON string to the new JSON file
+        f.write(json_string)
 
- # Overwrite the old JSON file with the new one
-os.remove("data.json")
-os.rename(new_file, "data.json")
+    # Overwrite the old JSON file with the new one
+    os.remove("inventory.json")
+    os.rename(new_file, "inventory.json")
