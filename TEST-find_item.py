@@ -45,10 +45,29 @@ class find_item:
                             i['Name'] = item
                             i['ID'] = item_gen
                             inventory.append(add_item)
-                        print(inventory)
-                
-                
-        
+                        
+
+#ask player
+ask = input("Do you want to search for an item? (Y/N) ")
+while ask.upper() == "Y":
+    find_item.guess()
+    ask = input("Do you want to search for an item? (Y/N) ")
+    print(f"This is your inventory: {inventory}")
+else:
+    print("Oh well..")
 
 
-find_item.guess()
+
+
+# Creates a new JSON file with the updated inventory
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    # Serialize the updated Python list to a JSON string
+    json_string = json.dumps(inventory)
+
+    # Write the JSON string to the new JSON file
+    f.write(json_string)
+
+# Overwrite the old JSON file with the new one
+os.remove("inventory.json")
+os.rename(new_file, "inventory.json")
