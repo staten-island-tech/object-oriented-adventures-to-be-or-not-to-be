@@ -7,10 +7,6 @@ data = open("./data.json", encoding="utf8")
 ## create variable "data" that represents the enitre data list
 data = json.load(data)
 
-## Open the JSON file of movie data
-inventory = open("./inventory.json", encoding="utf8")
-## create variable "data" that represents the enitre data list
-inventory = json.load(inventory)
 
 class Player:
     stats = [{'Name': 'Name', 'Total_XP': 0, 'LVL': [0]}]
@@ -88,14 +84,10 @@ class Name():
             self.name = name
         def __str__(self):
             return f"{self.name}"
-        
-## Open the JSON file of movie data
-data = open("./data.json", encoding="utf8")
-## create variable "data" that represents the enitre data list
-data = json.load(data)
-class locations():
+
+class locations(Player):
     n = input("Do you wanna start the game (Y/N): ").upper()      
-    input("This is To Be or Not To be game ")
+    print("This is To Be or Not To be game ")
 
     while n == "Y":
         print('Ok')
@@ -113,10 +105,12 @@ class locations():
             print("Note: You can come here for information on composting and quests. You can also drop off compostable trash to fertilize her beautiful flowers.")
         elif location == "3":
             input("This is Winstell's recycling center")
-            print("Note: ")
+            print("Note: Winstell will only take recyclable items, if an item that is given to him is non recyclable, XP will be dropped. Please be careful. ")
+            print("Note from planet Earth: Recycling the wrong materials will cause harm to OUR environment ")
+
         elif location == "4":
             input("This the park.")
-            print("Note: This is a place that is usually littered. You can have a higher chance of finding trash here")
+            print("Note: This is a place that is usually littered. Please help clean our littered parks.")
             while location == "N":
                 find_item()
             
@@ -145,8 +139,8 @@ class locations():
         elif location == "8":
             print(Level.calc_lvl())
             print(f"These are your stats: {Player}")
-        else:
-            print("oh well then.")
+    else:
+        print("oh well then.")
 
 
 
