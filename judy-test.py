@@ -2,10 +2,15 @@ import json
 import os
 from Player import Player
 
-with open("data.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
-    data = json.load(f)
-    ##Call classes in here
+## Open the JSON file of data (items)
+data = open("./data.json", encoding="utf8")
+## create variable "data" that represents the enitre data list
+data = json.load(data)
+
+## Open the JSON file of movie inventory
+inventory = open("./inventory.json", encoding="utf8")
+## create variable "inventory" that represents the enitre inventory list
+inventory = json.load(inventory)
 
 def calc_lvl():
     for i in Player:
@@ -42,35 +47,15 @@ def calc_lvl():
             i['LVL'] = y
 
 
-
 for i in Player:
     i['Name'] = "Judy"
-    i['Total_XP'] = 15
+    i['Total_XP'] = 27
     calc_lvl()
 
-""" 
-for i in data:
-    if i["type"] == "Compostable":
-        add = i["name"]
-        for i in Player:
-            i['INV'].append(add) """
-        
+
         
 n = input("Do you want to see your stats? (Y/N) ")
 
 if n.upper() == "Y":
     print(Player)
         
-""" for i in data:
-    if i["type"] == "Recyclable":
-        add = i["name"]
-        for i in Player:
-            i['INV'].append(add)
-         """
-        
-        
-n = input("Do you want to see your stats? (Y/N) ")
-
-if n.upper() == "Y":
-    for i in Player:
-        print(i['Name'], i['Total_XP'], i['LVL'], i['INV'])

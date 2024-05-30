@@ -1,1 +1,1 @@
-Player = [{'Name': 'Name', 'Total_XP': 0, 'LVL': 0, 'INV':[]}]
+Player = [{'Name': 'Name', 'Total_XP': 0, 'LVL': 0}]
