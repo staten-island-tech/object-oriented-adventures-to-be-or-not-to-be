@@ -74,4 +74,4 @@ with open(new_file, "w") as f:
 
 # Overwrite the old JSON file with the new one
 os.remove("inventory.json")
-os.rename(new_file, "inventory.json")
+os.rename(new_file, "inventory.json")   
