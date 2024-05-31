@@ -20,42 +20,39 @@ def guess():
         number_guess = random.randint(1,10)
         player_guess = int(input("Guess a number between 1 to 10: "))
 
-        while player_guess == (1,2,3,4,5,6,7,8,9,10):
-            guess = (player_guess)
+        if player_guess is not int:
+            player_guess = int(input("Please guess a number between 1 to 10: "))
+            
+        elif player_guess is int:
             while guess != number_guess:
                 if guess < number_guess:
                     print("Wrong guess: Your guess is too low") 
                 elif guess > number_guess:
                     print("Wrong guess: Your guess is too high")     
                 guess = int(input("Please guess again: "))
-            player_guess = input("Please guess a number between 1 to 10: ")
-
-        if player_guess != (1,2,3,4,5,6,7,8,9,10):
-            player_guess = int(input("Please guess a number between 1 to 10: "))
-
         
-        
-        if guess == number_guess:
-                item_gen = random.randint(1,8)
+            if guess == number_guess:
+                    item_gen = random.randint(1,8)
 
-                for i in data:
-                    if item_gen == i['ID']:
-                        item = i['name']
-                        item_type = i['type']
-                        input("Yay! You got...")
-                        print(f"Item: {item}, Type: {item_type} ")
-                        
-                        add_item = [{'Name': [], 'ID': 0}]
-                        for i in add_item:
-                            i['Name'] = item
-                            i['ID'] = item_gen
-                            inventory.append(add_item)
+                    for i in data:
+                        if item_gen == i['ID']:
+                            item = i['name']
+                            item_type = i['type']
+                            input("Yay! You got...")
 
 
-ask = input("Do you want to search for trash? (Y/N) ")
-print(f"This is your inventory: {inventory}")
+                            print(f"Item: {item}, Type: {item_type} ")
+                            
+                            add_item = [{'Name': [], 'ID': 0}]
+                            for i in add_item:
+                                i['Name'] = item
+                                i['ID'] = item_gen
+                                inventory.append(add_item)
 
-print("Oh well..")
+                                ask = input("Do you want to search for trash? (Y/N) ")
+
+    else:
+        print("Oh well..")
 
 
 # Creates a new JSON file with the updated inventory
