@@ -17,21 +17,19 @@ inventory = json.load(inventory)
 def guess():
     ask = input("Do you want to search for trash? (Y/N) ")
     while ask.upper() == "Y":
+        r = [("1"),("2"),("3"),("4"),("5"),("6"),("7"),("8"),("9"),("10")]
         number_guess = random.randint(1,10)
-        player_guess = int(input("Guess a number between 1 to 10: "))
+        player_guess = input("Guess a number between 1 to 10: ")
 
-        if player_guess is not int:
-            player_guess = int(input("Please guess a number between 1 to 10: "))
-            
-        elif player_guess is int:
-            while guess != number_guess:
-                if guess < number_guess:
+        if player_guess in r:
+            while int(player_guess) != number_guess:
+                if int(player_guess) < number_guess:
                     print("Wrong guess: Your guess is too low") 
-                elif guess > number_guess:
+                elif int(player_guess) > number_guess:
                     print("Wrong guess: Your guess is too high")     
-                guess = int(input("Please guess again: "))
+                player_guess = int(input("Please guess again: "))
         
-            if guess == number_guess:
+            if int(player_guess) == number_guess:
                     item_gen = random.randint(1,8)
 
                     for i in data:
@@ -39,7 +37,6 @@ def guess():
                             item = i['name']
                             item_type = i['type']
                             input("Yay! You got...")
-
 
                             print(f"Item: {item}, Type: {item_type} ")
                             
@@ -50,10 +47,12 @@ def guess():
                                 inventory.append(add_item)
 
                                 ask = input("Do you want to search for trash? (Y/N) ")
+            
 
     else:
         print("Oh well..")
 
+guess()
 
 # Creates a new JSON file with the updated inventory
 new_file = "updated.json"
