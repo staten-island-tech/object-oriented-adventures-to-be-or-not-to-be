@@ -49,7 +49,7 @@ def calc_lvl():
 
 for i in Player:
     i['Name'] = "Judy"
-    i['Total_XP'] = 27
+    i['Total_XP'] = 40
     calc_lvl()
 
 
