@@ -14,6 +14,10 @@ inventory = open("./inventory.json", encoding="utf8")
 ## create variable "inventory" that represents the enitre inventory list
 inventory = json.load(inventory)
 
+
+
+
+
 def guess():
     ask = input("Do you want to search for trash? (Y/N) ")
     while ask.upper() == "Y":
@@ -47,12 +51,15 @@ def guess():
                                 inventory.append(add_item)
 
                                 ask = input("Do you want to search for trash? (Y/N) ")
-            
+        else:
+            print("Error--")
+            ask = input("Do you want to search for trash? (Y/N) ")
 
     else:
         print("Oh well..")
 
-guess()
+
+
 
 # Creates a new JSON file with the updated inventory
 new_file = "updated.json"
