@@ -1,1 +1,1 @@
-[]
+[{"name": "Plastic Bottle", "type": "Recyclable", "ID": 1}, {"name": "Plastic Bag", "type": "Recyclable", "ID": 2}, {"name": "Empty Food Wrapper", "type": "Trash", "ID": 3}, {"name": "Empty Soda Can", "type": "Recyclable", "ID": 4}, {"name": "Banana Peel", "type": "Compostable", "ID": 5}]

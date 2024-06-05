@@ -57,10 +57,5 @@ class Winstell():
             select = input("Great!")
         # include if, elif, else statements here
 
-
-    def recycle():
-        for i in Player: #check if inventory has compatible items
-             for it in i['INV']:
-                 if it in: "Plastic Bag",
                      
                      

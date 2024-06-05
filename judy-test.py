@@ -47,13 +47,6 @@ def calc_lvl():
             i['LVL'] = y
 
 
-for i in Player:
-    i['Name'] = "Judy"
-    i['Total_XP'] = 40
-    calc_lvl()
-
-
-        
 n = input("Do you want to see your stats? (Y/N) ")
 
 if n.upper() == "Y":
