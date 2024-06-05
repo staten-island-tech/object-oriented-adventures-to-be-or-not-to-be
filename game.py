@@ -22,15 +22,15 @@ print("This is To Be or Not To be game ")
 
 while n == "Y":
     print('Ok')
-    Name = input("Please enter what you would like to be called: ")
+    User = input("Enter Username: ")
     for i in Player:
-        i['Name'] = Name
+        i['Name'] = User
         print(f"Hello, {i['Name']} The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning!")
     location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
     if location == '1':
         input("This is Jack's Shop.")
         print("Note: You can come here for quests and to collect the items from leveling up.")
-        
+        location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
     elif location == "2":
         input("This is Fiona's flower shop.")
         print("Note: You can come here for information on composting and quests. You can also drop off compostable trash to fertilize her beautiful flowers.")
@@ -42,20 +42,16 @@ while n == "Y":
     elif location == "4":
         input("This the park.")
         print("Note: This is a place that is usually littered. Please help clean our littered parks.")
-        while location == "N":
-            #ask player if they want to find item
-            ask = input("Do you want to search for trash? (Y/N) ")
-            while ask.upper() == "Y":
-                guess()
-                ask = input("Do you want to search for trash? (Y/N) ")
-                print(f"This is your inventory: {inventory}")
-            else:
-                print("Oh well..")
+        locations = input("Would you like to change locations?(Y/N) ").upper()
 
-        
-        location = input("Would you like to change locations? (Y/N) ").upper()
-        if location == "Y":
-            location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
+        while locations == "N":
+            #ask player if they want to find item
+                guess()
+                print(f"This is your inventory: {inventory}")
+                locations = input("Would you like to change locations? (Y/N) ").upper()
+                if locations == "Y":
+                    location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
+
     
     
     elif location == "5":
