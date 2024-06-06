@@ -58,7 +58,7 @@ def guess():
     else:
         print("Oh well..")
 
-
+guess()
 
 
 # Creates a new JSON file with the updated inventory

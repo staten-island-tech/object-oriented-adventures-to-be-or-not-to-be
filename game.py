@@ -2,11 +2,10 @@ import json
 import os
 import random
 
-## Open the JSON file of movie data
-data = open("./data.json", encoding="utf8")
-## create variable "data" that represents the enitre data list
-data = json.load(data)
-
+## Open the JSON file of inventory
+inventory = open("./inventory.json", encoding="utf8")
+## create variable "inventory" that represents the enitre inventory list
+inventory = json.load(inventory)
 
 #**Player information
 

@@ -51,4 +51,3 @@ n = input("Do you want to see your stats? (Y/N) ")
 
 if n.upper() == "Y":
     print(Player)
-        

@@ -14,6 +14,10 @@ def quest_Jack():
     answer = input("Do you want to check quest status? (Y/N) ")
     if answer.upper() == "Y":
         if int(len(inventory)) >= 3:
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+
             for i in Player:
                 i['Total_XP'] = i['Total_XP'] + 5
                 print("Jack: Congrats! You’ve successfully completed the quest -- Here’s your reward: *5 XP*")
@@ -23,12 +27,19 @@ def quest_Jack():
     else:
         input("Come back later!")
 
+
 def quest_Fiona():
     print("Quest #2 - Description: Collect 5 items, Reward: 10 XP")
     #description
     answer = input("Do you want to check quest status? (Y/N) ")
     if answer.upper() == "Y":
         if int(len(inventory)) >= 5:
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+    
             for i in Player:
                 i['Total_XP'] = i['Total_XP'] + 10
                 print("Fiona: Nice! You finished the quest -- This is your reward: *10 XP*")
@@ -44,6 +55,17 @@ def quests_Winstell():
     answer = input("Do you want to check quest status? (Y/N) ")
     if answer.upper() == "Y":
         if int(len(inventory)) >= 10:
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            del inventory[0]
+            
             for i in Player:
                 i['Total_XP'] = i['Total_XP'] + 20
                 print("Winstell: Nice job! You finished the quest -- This is your reward: *20 XP*")
@@ -56,3 +78,17 @@ def quests_Winstell():
 #change to functions that correspond to the requirement and reward given
 
 quest_Jack()
+
+
+# Creates a new JSON file with the updated inventory
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    # Serialize the updated Python list to a JSON string
+    json_string = json.dumps(inventory)
+
+    # Write the JSON string to the new JSON file
+    f.write(json_string)
+
+# Overwrite the old JSON file with the new one
+os.remove("inventory.json")
+os.rename(new_file, "inventory.json")
