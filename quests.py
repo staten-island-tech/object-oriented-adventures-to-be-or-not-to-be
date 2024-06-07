@@ -117,7 +117,6 @@ class NPC():
             input("Come back later!")
 
 
-
 # Creates a new JSON file with the updated inventory
 new_file = "updated.json"
 with open(new_file, "w") as f:
