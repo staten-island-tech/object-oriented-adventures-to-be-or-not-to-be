@@ -2,7 +2,8 @@ import json
 from Player import Player
 from calc_lvl import calc_lvl
 from final import guess
-
+import random
+import os
 ## Open the JSON file of data (items)
 data = open("./data.json", encoding="utf8")
 ## create variable "data" that represents the enitre data list
@@ -15,6 +16,7 @@ inventory = json.load(inventory)
 
 # MAIN STATS LOCATION FOR PLAYER
 #**Player information
+
 
     
 n = input("Do you wanna start the game (Y/N): ").upper()      
@@ -43,14 +45,13 @@ while n == "Y":
         input("This the park.")
         print("Note: This is a place that is usually littered. Please help clean our littered parks.")
         locations = input("Would you like to change locations?(Y/N) ").upper()
+       
 
         while locations == "N":
             #ask player if they want to find item
                 guess()
                 print(f"This is your inventory: {inventory}")
                 locations = input("Would you like to change locations? (Y/N) ").upper()
-                if locations == "Y":
-                    location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
 
     
     
@@ -60,9 +61,23 @@ while n == "Y":
             #ask player if they want to find item
             ask = input("Do you want to search for trash? (Y/N) ")
             while ask.upper() == "Y":
-                guess()
-                ask = input("Do you want to search for trash? (Y/N) ")
-                print(f"This is your inventory: {inventory}")
+                for i in inventory:
+                    guess()
+                    # Creates a new JSON file with the updated inventory
+                    new_file = "updated.json"
+                    with open(new_file, "w") as f:
+                        # Serialize the updated Python list to a JSON string
+                        json_string = json.dumps(inventory)
+
+                        # Write the JSON string to the new JSON file
+                        f.write(json_string)
+
+                    # Overwrite the old JSON file with the new one
+                    os.remove("inventory.json")
+                    os.rename(new_file, "inventory.json")
+                    
+                    ask = input("Do you want to search for trash? (Y/N) ")
+                    print(f"This is your inventory: {inventory}")
             else:
                 print("Oh well..")
 
@@ -70,7 +85,7 @@ while n == "Y":
         location = input("Would you like to change locations? (Y/N) ").upper()
         if location == "Y":
             location = input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " )
-    
+            
             
     elif location == "6":
         print("This is your house")
@@ -82,4 +97,4 @@ while n == "Y":
         print(f"These are your stats: {Player}")
 else:
     print("oh well then.")
-# player find item
+
