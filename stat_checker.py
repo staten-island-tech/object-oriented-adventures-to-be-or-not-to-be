@@ -12,8 +12,7 @@ def stat_checker():
         inv = []
         print(Player)
         for i in inventory:
-            item = i["name"]
-            inv.append(item)
+            print(i["Name"])
     print("Inventory: ",inv)
 
 stat_checker()
