@@ -1,7 +1,5 @@
 from final import guess
-from quests import quest_Jack 
-from quests import quest_Fiona
-from quests import quests_Winstell 
+from quests import NPC 
 from Player import Player
 
 for i in Player:
@@ -9,4 +7,4 @@ for i in Player:
 
 guess()
 
-quest_Jack()
+print(NPC.quest_Jack())

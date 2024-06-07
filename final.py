@@ -14,10 +14,6 @@ inventory = open("./inventory.json", encoding="utf8")
 ## create variable "inventory" that represents the enitre inventory list
 inventory = json.load(inventory)
 
-
-
-
-
 def guess():
     ask = input("Do you want to search for trash? (Y/N) ")
     while ask.upper() == "Y":
@@ -70,19 +66,3 @@ def guess():
 
     else:
         print("Oh well..")
-
-guess()
-
-
-# Creates a new JSON file with the updated inventory
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(inventory)
-
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
-
-# Overwrite the old JSON file with the new one
-os.remove("inventory.json")
-os.rename(new_file, "inventory.json")
