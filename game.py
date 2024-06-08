@@ -85,6 +85,6 @@ class location_8:
         if location == "8":
             print(calc_lvl())
             print(f"These are your stats: {Player}")
-    else:
-        print("oh well then.")
+        else:
+            print("oh well then.")
 
