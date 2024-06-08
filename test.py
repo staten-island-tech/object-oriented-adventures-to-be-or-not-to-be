@@ -1,13 +1,19 @@
-n = input("do u want to start the game").upper()
+n = input("do u want to start the game (Y/N) ").upper()
 
-if n == "Y":
-    location = int(input("1,2"))
-    while location == 1:
-        if location == 1:
-            print("i")
-            location = int(input("1,2"))
-        elif location == "2":
-            print("hi)")
-            location = int(input("1,2"))
-else:
-    print("oh well")
+while n == "Y":
+    location = int(input("type location number: "))
+    if location == 1:
+        print("this is location one")
+        location = input("Do you wish to return? (Y/N) ")
+
+    elif location == "N":
+        print(":(")
+            
+
+
+    if location == 2:
+        print("this is location two")
+        location = input("Do you wish to return? (Y/N) ")
+
+    elif location == "N":
+        print(":(")
