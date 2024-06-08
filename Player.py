@@ -12,9 +12,10 @@ def stat_checker():
     if n.upper() == "Y":
         inv = []
         print(Player)
-        for i in inventory:
-            item = i["name"]
-            inv.append(item)
+        for item in inventory:
+            for x in item:
+                item = x['Name']
+                inv.append(item)
     print("Inventory: ",inv)
 
 stat_checker()

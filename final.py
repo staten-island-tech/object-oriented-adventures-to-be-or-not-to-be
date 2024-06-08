@@ -65,4 +65,4 @@ def guess():
             ask = input("Do you want to search for trash? (Y/N) ")
 
     else:
-        print("Oh well..")
+        print("[ok] -- (>'-'<)")
