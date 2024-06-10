@@ -34,12 +34,4 @@ class Level:
             elif (i['Total_XP']-7)%8 == 0:
                 y = (i['Total_XP']-7)/8
                 print(y)
-                i['LVL'] = y 
-
-    
-
-
-
-
-
-
+                i['LVL'] = y
