@@ -2,7 +2,7 @@ import json
 import os
 from Player import Player
 from Player import stat
-
+import random
 ## Open the JSON file of inventory
 inventory = open("./inventory.json", encoding="utf8")
 ## create variable "inventory" that represents the enitre inventory list
@@ -75,6 +75,9 @@ class NPC():
                 for i in Player:
                     i['Total_XP'] = i['Total_XP'] + 10
                     print("Fiona: Nice! You finished the quest -- This is your reward: *10 XP*")
+                    num = random.randint("1","2","3")
+                    "1" = input("Which is organic waste?(Type the letter) [A: plastic bottles B: containers C: newspaper D: plastic bags]:  ")
+   
                     stat.stat_checker()
             else:
                 print("Fiona: Sorry, you don't have enough items. Come back when you collect more items. ")
@@ -119,3 +122,4 @@ class NPC():
                 print("Winstell: You haven't completed the quest yet. Come back when you collect more items. ")
         else:
             input("Come back later!")
+        
