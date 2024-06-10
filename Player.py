@@ -18,15 +18,6 @@ def stat_checker():
                 item = x['Name']
                 inv.append(item)
 
-                duplicate = set()
-
-                for num in inv:
-                # count number of times element appears in the list
-                        if inv.count(num) > 1:
-                                duplicate.add(num)
-
-                print(duplicate)
-
         print("Inventory: ",inv)
 
 

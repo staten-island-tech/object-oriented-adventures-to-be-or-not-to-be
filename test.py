@@ -10,7 +10,6 @@ while n == "Y":
         print(":(")
             
 
-
     if location == 2:
         print("this is location two")
         location = input("Do you wish to return? (Y/N) ")
