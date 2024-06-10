@@ -14,11 +14,7 @@ inventory = open("./inventory.json", encoding="utf8")
 ## create variable "inventory" that represents the enitre inventory list
 inventory = json.load(inventory)
 
-
-
-
-
-def guess():
+def guess(x):
     ask = input("Do you want to search for trash? (Y/N) ")
     while ask.upper() == "Y":
         r = [("1"),("2"),("3"),("4"),("5"),("6"),("7"),("8"),("9"),("10")]
@@ -34,7 +30,7 @@ def guess():
                 player_guess = int(input("Please guess again: "))
         
             if int(player_guess) == number_guess:
-                    item_gen = random.randint(1,8)
+                    item_gen = random.randint(1,x)
 
                     for i in data:
                         if item_gen == i['ID']:
@@ -50,6 +46,19 @@ def guess():
                                 i['ID'] = item_gen
                                 inventory.append(add_item)
 
+                                # Creates a new JSON file with the updated inventory
+                                new_file = "updated.json"
+                                with open(new_file, "w") as f:
+                                    # Serialize the updated Python list to a JSON string
+                                    json_string = json.dumps(inventory)
+
+                                    # Write the JSON string to the new JSON file
+                                    f.write(json_string)
+
+                                # Overwrite the old JSON file with the new one
+                                os.remove("inventory.json")
+                                os.rename(new_file, "inventory.json")
+
                                 ask = input("Do you want to search for trash? (Y/N) ")
         else:
             print("Error--")
@@ -57,19 +66,3 @@ def guess():
 
     else:
         print("Oh well..")
-
-
-
-
-# Creates a new JSON file with the updated inventory
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(inventory)
-
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
-
-# Overwrite the old JSON file with the new one
-os.remove("inventory.json")
-os.rename(new_file, "inventory.json")

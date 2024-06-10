@@ -6,8 +6,9 @@ inventory = open("./inventory.json", encoding="utf8")
 inventory = json.load(inventory)
 
 Player = [{'Name': 'name', 'Total_XP': 0, 'LVL': 0}]
-class stat():
 
+
+class stat():
     def stat_checker():
         n = input("Do you want to see your stats? (Y/N) ")
         if n.upper() == "Y":

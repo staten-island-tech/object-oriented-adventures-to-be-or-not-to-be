@@ -1,8 +1,9 @@
 import json
 from Player import Player
-from Player import stat_checker
-from calc_lvl import calc_lvl
+from Player import stat
 from final_player_find_item import guess
+from quests import NPC
+
 
 ## Open the JSON file of data (items)
 data = open("./data.json", encoding="utf8")
@@ -14,9 +15,6 @@ inventory = open("./inventory.json", encoding="utf8")
 ## create variable "inventory" that represents the enitre inventory list
 inventory = json.load(inventory)
 
-# MAIN STATS LOCATION FOR PLAYER
-#**Player information
-
     
 n = input("Do you wanna start the game (Y/N): ").upper()      
 print("This is To Be or Not To be game ")
@@ -26,24 +24,31 @@ for i in Player:
     print(f"Hello, {i['Name']} The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning!")
 while n == "Y":
     
-    
     location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
     if location == 1:
         input("This is Jack's Shop.")
         print("Note: You can come here for quests and to collect the items from leveling up.")
+        quest_ask = input("Would you like to start Jack's quest? (Y/N) ")
+        if quest_ask.upper() == "Y":  
+            print(NPC.quest_Jack())
         location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     elif location == 2:
         input("This is Fiona's flower shop.")
         print("Note: You can come here for information on composting and quests. You can also drop off compostable trash to fertilize her beautiful flowers.")
-        quest_ask = input("Would you like to start Fiona's quest? (Y/N)")
-        if quest_ask.upper() == "Y":
+        quest_ask = input("Would you like to start Fiona's quest? (Y/N) ")
+        if quest_ask.upper() == "Y":  
+            print(NPC.quest_Fiona())
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
 
     elif location == 3:
         input("This is Winstell's recycling center")
-        print("Note: Winstell will only take recyclable items, if an item that is given to him is non recyclable, XP will be dropped. Please be careful. ")
         print("Note from planet Earth: Recycling the wrong materials will cause harm to OUR environment ")
+        quest_ask = input("Would you like to start Winstell's quest? (Y/N) ")
+        if quest_ask.upper() == "Y":  
+            print(NPC.quests_Winstell())
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     elif location == 4:
         input("This the park.")
@@ -52,7 +57,7 @@ while n == "Y":
 
         while locations == "N":
                 #ask player if they want to find item
-            guess()
+            guess(5)
             print(f"This is your inventory: {inventory}")
             locations = input("Would you like to change locations? (Y/N) ").upper()
             if locations == "Y":
@@ -63,7 +68,7 @@ while n == "Y":
 
     elif location == 5:
         print("This is the Beach. you can find a wider range of trash")
-        guess()
+        guess(8)
         location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
         
         
@@ -80,8 +85,8 @@ while n == "Y":
         print("This is the trash can.")
 
     elif location == 8:
-        print(calc_lvl())
-        print(stat_checker())
+        print(stat.calc_lvl())
+        print(stat.stat_checker())
 else:
         print("oh well then.")
 
