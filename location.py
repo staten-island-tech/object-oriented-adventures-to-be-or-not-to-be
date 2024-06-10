@@ -2,7 +2,6 @@ from Player import Player
 
 import json
 from Player import Player
-from calc_lvl import calc_lvl
 from final_player_find_item import guess
 
 ## Open the JSON file of data (items)
@@ -74,6 +73,5 @@ class location():
             print("This is the trash can.")
 
     def eight():
-            if location == "8":
-                print(calc_lvl())
+
                 print(f"These are your stats: {Player}")
