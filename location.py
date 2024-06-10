@@ -3,7 +3,7 @@ from Player import Player
 import json
 from Player import Player
 from calc_lvl import calc_lvl
-from final import guess
+from final_player_find_item import guess
 
 ## Open the JSON file of data (items)
 data = open("./data.json", encoding="utf8")

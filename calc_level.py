@@ -1,13 +1,4 @@
-Player = [{'Name': "Judy", 'XP': 14, 'LVL': [0]}]
-
-
-class rewards():
-    def reward_1():
-        for i in Player:
-            nxp = i['XP'] + 2
-            i['XP'] = nxp
-        print(Player)
-
+from Player import Player
 
 class Level:
     def calc_lvl():
@@ -44,6 +35,8 @@ class Level:
                 y = (i['Total_XP']-7)/8
                 print(y)
                 i['LVL'] = y 
+
+    
 
 
 

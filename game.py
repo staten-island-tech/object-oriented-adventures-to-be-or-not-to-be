@@ -1,7 +1,8 @@
 import json
 from Player import Player
+from Player import stat_checker
 from calc_lvl import calc_lvl
-from final import guess
+from final_player_find_item import guess
 
 ## Open the JSON file of data (items)
 data = open("./data.json", encoding="utf8")
@@ -35,6 +36,9 @@ while n == "Y":
     elif location == 2:
         input("This is Fiona's flower shop.")
         print("Note: You can come here for information on composting and quests. You can also drop off compostable trash to fertilize her beautiful flowers.")
+        quest_ask = input("Would you like to start Fiona's quest? (Y/N)")
+        if quest_ask.upper() == "Y":
+
 
     elif location == 3:
         input("This is Winstell's recycling center")
@@ -77,7 +81,7 @@ while n == "Y":
 
     elif location == 8:
         print(calc_lvl())
-        print(f"These are your stats: {Player}")
+        print(stat_checker())
 else:
         print("oh well then.")
 
