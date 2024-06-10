@@ -229,4 +229,4 @@ class NPC():
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
                 print("Try again next time")
 
-NPC.quest_Fiona()
+NPC.quest_Jack()
