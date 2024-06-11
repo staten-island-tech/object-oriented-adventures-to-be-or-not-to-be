@@ -53,13 +53,13 @@ class NPC():
 
             if int(len(inventory)) < 3:
                 print("Jack: Not quite.(￣﹏￣；) Come back when you collect more items. ")
-                location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
+                
 
-            if int(len(inventory)) == 0:
-                print("Jack: Not quite.(￣﹏￣；) Come back when you collect more items. ")
-                location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
+            
+                
         else:
             location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
+            return location
 
 
     def quest_Fiona():

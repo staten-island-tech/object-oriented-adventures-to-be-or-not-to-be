@@ -38,7 +38,7 @@ while n == "Y":
     elif location == 2:
         input("This is Fiona's flower shop.")
         print("Note: You can come here for information on composting and quests. You can also drop off compostable trash to fertilize her beautiful flowers.")
-        quest_ask = input("Would you like to start Fiona's quest? (Y/N) ")
+        quest_ask = input("Would you like to see Fiona's quest? (Y/N) ")
         if quest_ask.upper() == "Y":  
             print(NPC.quest_Fiona())
         location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
@@ -47,7 +47,7 @@ while n == "Y":
     elif location == 3:
         input("This is Winstell's recycling center")
         print("Note from planet Earth: Recycling the wrong materials will cause harm to OUR environment ")
-        quest_ask = input("Would you like to start Winstell's quest? (Y/N) ")
+        quest_ask = input("Would you like to see Winstell's quest? (Y/N) ")
         if quest_ask.upper() == "Y":  
             print(NPC.quests_Winstell())
         location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
