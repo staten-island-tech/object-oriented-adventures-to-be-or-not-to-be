@@ -12,13 +12,7 @@ class stat():
     def stat_checker():
         n = input("Do you want to see your stats? (Y/N) ")
         if n.upper() == "Y":
-            inv = []
             print(Player)
-
-            for item in inventory:
-                for x in item:
-                    item = x['Name']
-                    inv.append(item)
 
 
     def calc_lvl():
