@@ -23,23 +23,18 @@ User = input("Enter Username: ")
 for i in Player:
     i['Name'] = User
     print(f"Hello, {i['Name']} The goal of this game is to collect littered trash and learn about the best place to drop it off. This game is interactive and a great, fun learning!")
+    location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 while n == "Y":
     
-    location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
     if location == 1:
         input("This is Jack's Shop.")
         print("Note: You can come here for quests and to collect the items from leveling up.")
         quest_ask = input("Would you like to see Jack's quest? (Y/N) ")
         if quest_ask.upper() == "Y": 
-            for i in inventory: 
-                print(NPC.quest_Jack())
-                new_file = "updated.json"
-                with open(new_file, "w") as f:
-                    json_string = json.dumps(inventory)
-                    f.write(json_string)
-                os.remove("inventory.json")
-                os.rename(new_file, "inventory.json")
-        
+            print(NPC.quest_Jack())
+                
+        else:
+            location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
     elif location == 2:
         input("This is Fiona's flower shop.")
         print("Note: You can come here for information on composting and quests. You can also drop off compostable trash to fertilize her beautiful flowers.")
@@ -55,7 +50,7 @@ while n == "Y":
         quest_ask = input("Would you like to start Winstell's quest? (Y/N) ")
         if quest_ask.upper() == "Y":  
             print(NPC.quests_Winstell())
-        
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     elif location == 4:
         input("This the park.")

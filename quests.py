@@ -11,7 +11,7 @@ inventory = json.load(inventory)
 class NPC():
     def quest_Jack():
 
-        print("Quest #1 - Description: Collect 3 items that are classified trash, Reward: 5 XP")
+        print("Quest #1 - Description: Collect 3 items that are classified trash, Reward: 2 XP")
         #description
         answer = input("Do you want to check quest completion status? (Y/N) ")
         if answer.upper() == "Y":
@@ -36,7 +36,7 @@ class NPC():
 
                     for i in Player:
                         i['Total_XP'] = i['Total_XP'] + 2
-                        print("Jack: Congrats! You’ve successfully completed the quest -- Here’s your reward: *5 XP*")
+                        print("Jack: Congrats! You’ve successfully completed the quest -- Here’s your reward: *2 XP*")
                     
                                     # Creates a new JSON file with the updated inventory
                     new_file = "updated.json"
@@ -52,7 +52,8 @@ class NPC():
                     os.rename(new_file, "inventory.json")
 
             else:
-                print("Jack: Not quite.(￣﹏￣；) Come back when you collect more items. ")
+                    print("Jack: Not quite.(￣﹏￣；) Come back when you collect more items. ")
+                    location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
         else:
             location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
@@ -94,7 +95,7 @@ class NPC():
                 elif choose == 3:
                     ans = input("What is required for composting? (Type the letter) [A: Human care 24/7 B: Soil C: Plastic D: Candy]: ")
                     if ans.upper() == "B":
-                        print("Fiona: Amazing! Whether it was pure luck or your knowledge, you got it right!")
+                        print("Fiona: Amazing! Whether it was pure luck or yo;ur knowledge, you got it right!")
                         print("Fiona: Now you will get your reward! \(￣︶￣*\))")
                         granted = True
 
@@ -321,3 +322,5 @@ class NPC():
             else: 
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
                 print("Try again next time")
+
+print(NPC.quest_Jack())

@@ -20,7 +20,6 @@ class stat():
                     item = x['Name']
                     inv.append(item)
 
-            print("Inventory: ",inv)
 
     def calc_lvl():
         for i in Player:
