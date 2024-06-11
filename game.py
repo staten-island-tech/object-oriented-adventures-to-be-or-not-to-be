@@ -63,6 +63,14 @@ while n == "Y":
         if locations == "N":
                 #ask player if they want to find item
             guess(5)
+            # Creates a new JSON file with the updated inventory
+            new_file = "updated.json"
+            with open(new_file, "w") as f:
+            # Serialize the updated Python list to a JSON string
+                json_string = json.dumps(inventory)
+
+            # Write the JSON string to the new JSON file
+            f.write(json_string)
             
 
           
@@ -74,7 +82,12 @@ while n == "Y":
         if locations == "N":
                 #ask player if they want to find item
             guess(5)
-            
+        new_file = "updated.json"
+        with open(new_file, "w") as f:
+
+            json_string = json.dumps(inventory)
+
+        f.write(json_string)
            
            
         
@@ -91,7 +104,7 @@ while n == "Y":
     elif location == 8:
         print(stat.calc_lvl())
         print(stat.stat_checker())
-        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
+        
     else:
         print("--An error occurred--")
         
