@@ -63,7 +63,7 @@ class NPC():
 
 
     def quest_Fiona():
-        print("Quest #2 - Description: Collect 5 items, Reward: 10 XP")
+        print("Quest - Description: Collect 5 items, Reward: 10 XP")
         #description
         answer = input("Do you want to check quest status? (Y/N) ")
         if answer.upper() == "Y":
@@ -162,7 +162,7 @@ class NPC():
             location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     def quests_Winstell():
-        print("Description: Collect 8 items, Reward: 20 XP") 
+        print("Quest Description: Collect 8 items, Reward: 20 XP") 
         #description
         answer = input("Do you want to check quest status? (Y/N) ")
         if answer.upper() == "Y":
@@ -335,4 +335,3 @@ class NPC():
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
                 print("Try again next time")
 
-print(NPC.quests_Winstell())
