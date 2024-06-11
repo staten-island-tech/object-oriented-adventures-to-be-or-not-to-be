@@ -37,11 +37,24 @@ class NPC():
                     for i in Player:
                         i['Total_XP'] = i['Total_XP'] + 2
                         print("Jack: Congrats! You’ve successfully completed the quest -- Here’s your reward: *5 XP*")
-                        stat.stat_checker()
+                    
+                                    # Creates a new JSON file with the updated inventory
+                    new_file = "updated.json"
+                    with open(new_file, "w") as f:
+                        # Serialize the updated Python list to a JSON string
+                        json_string = json.dumps(inventory)
+
+                        # Write the JSON string to the new JSON file
+                        f.write(json_string)
+
+                    # Overwrite the old JSON file with the new one
+                    os.remove("inventory.json")
+                    os.rename(new_file, "inventory.json")
+
             else:
                 print("Jack: Not quite.(￣﹏￣；) Come back when you collect more items. ")
         else:
-            input("Come back later!")
+            location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
 
     def quest_Fiona():
@@ -119,16 +132,10 @@ class NPC():
                 del inventory[0]
                 del inventory[0]
 
-                # Creates a new JSON file with the updated inventory
                 new_file = "updated.json"
                 with open(new_file, "w") as f:
-                    # Serialize the updated Python list to a JSON string
                     json_string = json.dumps(inventory)
-
-                    # Write the JSON string to the new JSON file
                     f.write(json_string)
-
-                # Overwrite the old JSON file with the new one
                 os.remove("inventory.json")
                 os.rename(new_file, "inventory.json")
 
@@ -136,14 +143,13 @@ class NPC():
                     for i in Player:
                         i['Total_XP'] = i['Total_XP'] + 10
                         print("Fiona: Nice! This is your reward: *+10 XP*")
-                        stat.stat_checker()
 
                 elif granted == False:
                     print("Fiona: Since you answered the trivia incorrectly, you loose five items and dont't get a reward. ")
             else:
                 print("Fiona: Sorry, you don't have enough items. Come back when you collect more items. ")
         else:
-            input("Fiona: Alright, come back when you ready.")
+            location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     def quests_Winstell():
         print("Description: Collect 8 items, Reward: 20 XP") 
@@ -151,6 +157,76 @@ class NPC():
         answer = input("Do you want to check quest status? (Y/N) ")
         if answer.upper() == "Y":
             if int(len(inventory)) >= 8:
+
+                choose = random.randint(1,6)
+                if choose == 1:
+                    ans = input("Is Aluminum Foil recyclable? (Type the letter) [A.Yes B.No]: ")
+                    if ans.upper() == "A":
+                        print("Winstell: Brilliant! Whether or not it was pure luck or your knowledge, got the right choice!")
+                        print("Winstell: Now you will get your reward! d(▀̿Ĺ̯▀̿ ̿)")
+                        granted = True
+
+                    else: 
+                        print("Sorry, that is not the correct answer choice. (￣﹏￣；) ")
+                        print("Try again next time")
+                        granted = False
+                        
+                elif choose == 2:
+                    ans = input("How much trash do Americans create each year? (Type the letter) [A: 100 million tons B.210 million tons C: 500 million tons D: none]: ")
+                    if ans.upper() == "B":
+                        print("Winstell: Brilliant! Whether or not it was pure luck or your knowledge, got the right choice!")
+                        print("Winstell: Now you will get your reward! d(▀̿Ĺ̯▀̿ ̿)")
+                        granted = True
+
+                    else: 
+                        print("Sorry, that is not the correct answer choice. (￣﹏￣；) ")
+                        print("Try again next time")
+                        granted = False
+                elif choose == 3:
+                    ans = input("Where does most of the garbage go? (Type the letter) [A: To Landfills B: To your mom’s house C: To Recycling D: To composting]: ")
+                    if ans.upper() == "A":
+                        print("Winstell: Brilliant! Whether or not it was pure luck or your knowledge, got the right choice!")
+                        print("Winstell: Now you will get your reward! d(▀̿Ĺ̯▀̿ ̿)")
+                        granted = True
+
+                    else: 
+                        print("Sorry, that is not the correct answer choice. (￣﹏￣；) ")
+                        print("Try again next time")
+                        granted = False
+                elif choose == 4:
+                    ans = input("The term reduce in the three important R’s (reuse,reduce, and recycle) means: (Type the letter) [A:Use something over and over again. B: Use less of something, creating smaller amounts of waste C: Make something into something new.D: Make something ugly into something beautiful.]: ")
+                    if ans.upper() == "B":
+                        print("Winstell: Brilliant! Whether or not it was pure luck or your knowledge, got the right choice!")
+                        print("Winstell: Now you will get your reward! d(▀̿Ĺ̯▀̿ ̿)")
+                        granted = True
+                    else: 
+                        print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
+                        print("Try again next time")
+                        granted = False
+
+                elif choose == 5:
+                    ans = input("Approximately what percent of trash thrown away today could be recycled? (Type the letter) [A. 20 B:23 C: 40 D: 57]: ")
+                    if ans.upper() == "C":
+                        print("Winstell: Brilliant! Whether or not it was pure luck or your knowledge, got the right choice!")
+                        print("Winstell: Now you will get your reward! d(▀̿Ĺ̯▀̿ ̿)")
+                        granted = True
+                    else: 
+                        print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
+                        print("Try again next time")
+                        granted = False
+
+                elif choose == 6:
+                    ans = input("Recycling 1 ton of paper saves ____ mature trees. (Type the letter) [A: 10 B: 12 C: 3 D : 17]: ")
+                    if ans.upper() == "D":
+                        print("Winstell: Brilliant! Whether or not it was pure luck or your knowledge, got the right choice!")
+                        print("Winstell: Now you will get your reward! d(▀̿Ĺ̯▀̿ ̿)")
+                        granted = True
+
+                    else: 
+                        print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
+                        print("Try again next time")
+                        granted = False
+
                 del inventory[0]
                 del inventory[0]
                 del inventory[0]
@@ -176,9 +252,8 @@ class NPC():
 
                 if granted == True:
                     for i in Player:
-                        i['Total_XP'] = i['Total_XP'] + 10
-                        print("Winstell: Nice! This is your reward: *+10 XP*")
-                        stat.stat_checker()
+                        i['Total_XP'] = i['Total_XP'] + 17
+
 
                 elif granted == False:
                     print("Winstell: Since you answered the trivia incorrectly, you loose five items and dont't get a reward. ")
@@ -186,15 +261,15 @@ class NPC():
             else:
                 print("Winstell: You haven't completed the quest yet. Come back when you collect more items. ")
         else:
-            input("Winstell: No worries, come back when you're ready")
+            location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
 
 
     def trivia_winstell():
         choose = random.randint(1,5)
         if choose == 1:
-            ans = input(" ")
-            if ans.upper() == "":
+            ans = input("Is Aluminum Foil recyclable? (Type the letter) [A.Yes B.No]: ")
+            if ans.upper() == "A":
                 print("Amazing! Whether it was pure luck or your knowledge, you got it right!")
                 print("Now you will get your reward! \(￣︶￣*\))")
 
@@ -202,8 +277,8 @@ class NPC():
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；) ")
                 print("Try again next time")
         elif choose == 2:
-            ans = input(" ")
-            if ans.upper() == "":
+            ans = input("How much trash do Americans create each year? (Type the letter) [A: 100 million tons B.210 million tons C: 500 million tons D: none]:")
+            if ans.upper() == "B":
                 print("Amazing! Whether it was pure luck or your knowledge, you got it right!")
                 print("Now you will get your reward! \(￣︶￣*\))")
 
@@ -211,8 +286,8 @@ class NPC():
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；) ")
                 print("Try again next time")
         elif choose == 3:
-            ans = input(" ")
-            if ans.upper() == "":
+            ans = input("Where does most of the garbage go? (Type the letter) [A: To Landfills B: To your mom’s house C: To Recycling D: To composting]: ")
+            if ans.upper() == "A":
                 print("Amazing! Whether it was pure luck or your knowledge, you got it right!")
                 print("Now you will get your reward! \(￣︶￣*\))")
 
@@ -220,13 +295,29 @@ class NPC():
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；) ")
                 print("Try again next time")
         elif choose == 4:
-            ans = input(" ")
-            if ans.upper() == "":
+            ans = input("The term reduce in the three important R’s (reuse,reduce, and recycle) means: (Type the letter) [A:Use something over and over again. B: Use less of something, creating smaller amounts of waste C: Make something into something new.D: Make something ugly into something beautiful.]: ")
+            if ans.upper() == "B":
+                print("Amazing! Whether it was pure luck or your knowledge, you got it right!")
+                print("Now you will get your reward! \(￣︶￣*\))")
+            else: 
+                print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
+                print("Try again next time")
+
+        elif choose == 5:
+            ans = input("Approximately what percent of trash thrown away today could be recycled? (Type the letter) [A. 20 B:23 C: 40 D: 57]: ")
+            if ans.upper() == "C":
+                print("Amazing! Whether it was pure luck or your knowledge, you got it right!")
+                print("Now you will get your reward! \(￣︶￣*\))")
+            else: 
+                print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
+                print("Try again next time")
+
+        elif choose == 6:
+            ans = input("Recycling 1 ton of paper saves ____ mature trees. (Type the letter) [A: 10 B: 12 C: 3 D : 17]: ")
+            if ans.upper() == "D":
                 print("Amazing! Whether it was pure luck or your knowledge, you got it right!")
                 print("Now you will get your reward! \(￣︶￣*\))")
 
             else: 
                 print("Sorry, that is not the correct answer choice. (￣﹏￣；)")
                 print("Try again next time")
-
-NPC.quest_Jack()

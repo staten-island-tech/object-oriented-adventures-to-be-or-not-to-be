@@ -1,4 +1,5 @@
 import json
+import os
 from Player import Player
 from Player import stat
 from final_player_find_item import guess
@@ -32,6 +33,12 @@ while n == "Y":
         if quest_ask.upper() == "Y": 
             for i in inventory: 
                 print(NPC.quest_Jack())
+                new_file = "updated.json"
+                with open(new_file, "w") as f:
+                    json_string = json.dumps(inventory)
+                    f.write(json_string)
+                os.remove("inventory.json")
+                os.rename(new_file, "inventory.json")
         
     elif location == 2:
         input("This is Fiona's flower shop.")
@@ -66,20 +73,25 @@ while n == "Y":
     elif location == 5:
         print("This is the Beach. you can find a wider range of trash")
         guess(8)
+        new_file = "updated.json"
+       
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
         
            
-         
         
     elif location == 6:
         print("This is your house")
         print("Note: This is your house, you can relax here")
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     elif location == 7:
         print("This is the trash can.")
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
 
     elif location == 8:
         print(stat.calc_lvl())
         print(stat.stat_checker())
+        location = int(input("You have 6 available locations to go to. Type the number of one of the following: 1.) Jack's shop, 2.Fiona's flower shop, 3.) Winstell's recycling center, 4.) Park, 5.) Beach, 6.) House, 7.Trash can, 8.Check stats: " ))
     else:
         print("--An error occurred--")
         
